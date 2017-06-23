@@ -36,25 +36,25 @@ function handleSubmit(event) {
   // when user clicks submit
   // collect selected dropdown value
   PendingOrder.strUser = PendingOrder.e.options[PendingOrder.e.selectedIndex].value;
-  var productName = PendingOrder.strUser;
+  var productName = 'Product Name: ' + PendingOrder.strUser;
   // collect text field values
   // instantiate order object
-  var howMany = event.target.howMany.value;
-  var billingName = event.target.billingName.value;
-  var billingAddressLine1 = event.target.billingAddressLine1.value;
-  var billingAddressLine2 = event.target.billingAddressLine2.value;
-  var billingCity = event.target.billingCity.value;
-  var billingState = event.target.billingState.value;
-  var billingZipCode = event.target.billingZipCode.value;
-  var shippingName = event.target.shippingName.value;
-  var shippingAddressLine1 = event.target.shippingAddressLine1.value;
-  var shippingAddressLine2 = event.target.shippingAddressLine2.value;
-  var shippingCity = event.target.shippingCity.value;
-  var shippingState = event.target.shippingState.value;
-  var shippingZipCode = event.target.shippingZipCode.value;
-  var creditCardNumber = event.target.creditCardNumber.value;
-  var creditCardVerification = event.target.creditCardVerification.value;
-  allOrders.push(new
+  var howMany = 'How Many: ' + event.target.howMany.value;
+  var billingName = 'Billing Name: ' + event.target.billingName.value;
+  var billingAddressLine1 = 'Billing Address Line 1: ' + event.target.billingAddressLine1.value;
+  var billingAddressLine2 = 'Billing Address Line 2: ' + event.target.billingAddressLine2.value;
+  var billingCity = 'Billing City: ' + event.target.billingCity.value;
+  var billingState = 'Billing State: ' + event.target.billingState.value;
+  var billingZipCode = 'Billing Zip Code: ' + event.target.billingZipCode.value;
+  var shippingName = 'Shipping Name: ' + event.target.shippingName.value;
+  var shippingAddressLine1 = 'Shipping Address Line 1: ' + event.target.shippingAddressLine1.value;
+  var shippingAddressLine2 = 'Shipping Address Line 2: ' + event.target.shippingAddressLine2.value;
+  var shippingCity = 'Shipping City: ' + event.target.shippingCity.value;
+  var shippingState = 'Shipping State: ' + event.target.shippingState.value;
+  var shippingZipCode = 'Shipping Zip Code: ' + event.target.shippingZipCode.value;
+  var creditCardNumber = 'Credit Card Number: ' + event.target.creditCardNumber.value;
+  var creditCardVerification = 'ccv: ' + event.target.creditCardVerification.value;
+  var newestOrder = (new
    PendingOrder(howMany,
      billingName,
      billingAddressLine1,
@@ -71,6 +71,8 @@ function handleSubmit(event) {
      creditCardNumber,
      creditCardVerification,
      productName));
+
+  allOrders.push(newestOrder);
   // store allOrders in localStorage
   //console.log(allOrders);
   storeToLocalStorage();
@@ -83,11 +85,24 @@ function handleSubmit(event) {
 // store data in localStorage every time the data changes
 function storeToLocalStorage() {
   localStorage.setItem('orders', JSON.stringify(allOrders));
+  console.log(localStorage.orders);
+}
+
+function getFromLocalStorage() {
+// if localStorage exists
+  if (localStorage.length > 0) {
+      // retrieve, parse, assign to array of objects
+    allOrders = JSON.parse(localStorage.getItem('orders'));
+    console.log('allOrders test ' + allOrders[0].howMany);
+  } else {
+    console.log('Nothing currently in storage!');
+  }
 }
 
 // EVENT LISTENER FOR HANDLING CLICKING OF SUBMIT BUTTON
 function init() {
   submitButton.addEventListener('submit', handleSubmit);
+  getFromLocalStorage();
 }
 
 init();

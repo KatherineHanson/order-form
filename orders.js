@@ -5,11 +5,16 @@ var allOrders = [];
 var displayPendingOrders = document.getElementById('pendingOrders');
 
 function getFromLocalStorage() {
-  allOrders = JSON.parse(localStorage.getItem('orders'));
-  console.log('allOrders test ' + allOrders[0].howMany);
-
-  for(var i = 0; i < allOrders.length; i++) {
-    renderOrder(i);
+  // if localStorage exists
+  if (localStorage.length > 0) {
+      // retrieve, parse, assign to array of objects
+    allOrders = JSON.parse(localStorage.getItem('orders'));
+    console.log('allOrders test ' + allOrders[0].howMany);
+    for(var i = 0; i < allOrders.length; i++) {
+      renderOrder(i);
+    }
+  } else {
+    console.log('Nothing currently in storage!');
   }
 }
 
