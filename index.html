@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Orders</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form id="form-input">
+      <fieldset>
+        <legend>Place an Order at Bus Mall</legend>
+        <div class="dropdown">
+          <button class="dropbtn">Products</button>
+          <select id="myDropdown" class="dropdown-content">
+            <option value="bag">bag</option>
+            <option value="banana">banana</option>
+            <option value="bathroom">bathroom</option>
+            <option value="boots">boots</option>
+            <option value="breakfast">breakfast</option>
+            <option value="bubblegum">bubblegum</option>
+            <option value="chair">chair</option>
+            <option value="cthulu">cthulhu</option>
+            <option value="dog-duck">dog-duck</option>
+            <option value="dragon">dragon</option>
+            <option value="pen">pen</option>
+            <option value="pet-sweep">pet-sweep</option>
+            <option value="scissors">scissors</option>
+            <option value="shark">shark</option>
+            <option value="sweel">sweep</option>
+            <option value="tauntaun">tauntaun</option>
+            <option value="unicorn">unicorn</option>
+            <option value="usb">usb</option>
+            <option value="water-can">water-can</option>
+            <option value="wine-glass">wine-glass</option>
+          </select>
+        </div>
+          <label for="howMany">How Many: </label>
+          <input name="howMany" type="text"/>
+
+          <label for="billingName">Billing Name: </label>
+          <input name="billingName" type="text"/>
+
+          <label for="billingAddressLine1">Billing Address Line 1: </label>
+          <input name="billingAddressLine1" type="text"/>
+
+          <label for="billingAddressLine2">Billing Address Line 2: </label>
+          <input name="billingAddressLine2" type="text"/>
+
+          <label for="billingCity">Billing City: </label>
+          <input name="billingCity" type="text"/>
+
+          <label for="billingState">Billing State: </label>
+          <input name="billingState" type="text"/>
+
+          <label for="billingZipCode">Billing Zip Code: </label>
+          <input name="billingZipCode" type="text"/>
+
+          <label for="shippingName">Shipping Name: </label>
+          <input name="shippingName" type="text"/>
+
+          <label for="shippingAddressLine1">Shipping Address Line 1: </label>
+          <input name="shippingAddressLine1" type="text"/>
+
+          <label for="shippingAddressLine2">Shipping Address Line 2: </label>
+          <input name="shippingAddressLine2" type="text"/>
+
+          <label for="shippingCity">Shipping City: </label>
+          <input name="shippingCity" type="text"/>
+
+          <label for="shippingState">Shipping State: </label>
+          <input name="shippingState" type="text"/>
+
+          <label for="shippingZipCode">Shipping Zip Code: </label>
+          <input name="shippingZipCode" type="text"/>
+
+          <label for="creditCardNumber">Credit Card Number: </label>
+          <input name="creditCardNumber" type="text"/>
+
+          <label for="creditCardVerification">Credit Card Verification: </label>
+          <input name="creditCardVerification" type="text"/>
+
+          <button id="submit" type="submit">Submit Order</button>
+      </fieldset>
+    </form>
+    <script type='text/javascript' src="app.js"></script>
+  </body>
+</html>
