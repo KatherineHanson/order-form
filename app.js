@@ -32,7 +32,7 @@ creditVer, productName) {
 // EVENT HANDLER
 function handleSubmit(event) {
   event.preventDefault();
-  console.log('Hello!');
+  // console.log('Hello!');
   // when user clicks submit
   // collect selected dropdown value
   PendingOrder.strUser = PendingOrder.e.options[PendingOrder.e.selectedIndex].value;
